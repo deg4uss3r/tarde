@@ -6,7 +6,7 @@ TARDE (tar-dee, Time And Rust Duration Ergonomics) is a small library to allow f
 
 ```rust
 use std::time::Duration;
-use tardiw::*;
+use tarde::*;
 
 fn main() -> Result<(), tardiw::Error> {
     let x = 10;

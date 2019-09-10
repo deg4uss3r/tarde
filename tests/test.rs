@@ -11,13 +11,6 @@ fn test_milliseconds() -> Result<(), tarde::Error>{
 }
 
 #[test]
-fn test_large_milliseconds() -> Result<(), tarde::Error>{
-    let x: u128 = 18446744073709551615;
-    let duration_x = x.to_ms()?; 
-    Ok(assert_eq!(duration_x, time::Duration::from_millis(u64::max_value())))
-}
-
-#[test]
 #[should_panic]
 fn test_milliseconds_overflow() {
     let x: u128 = 184467440737095516199999;
@@ -37,9 +30,7 @@ fn test_microseconds() -> Result<(), tarde::Error> {
     let now = time::Instant::now();
     thread::sleep(x.to_us()?);
     
-    assert!(now.elapsed() >= x.to_us()?);
-
-    Ok(())
+    Ok(assert!(now.elapsed() >= x.to_us()?))
 }
 
 #[test]
@@ -54,4 +45,50 @@ fn test_microseconds_overflow() {
 fn test_microseconds_negative() {
     let x: i32 = -42;
     x.to_us().unwrap();
+}
+
+#[test]
+fn test_nanoseconds() -> Result<(), tarde::Error> {
+    let x = 10; 
+    let now = time::Instant::now();
+    thread::sleep(x.to_ns()?);
+    
+    Ok(assert!(now.elapsed() >= x.to_ns()?))
+}
+
+#[test]
+#[should_panic]
+fn test_nanoseconds_overflow() {
+    let x: u128 = 18446744073709551614599999;
+    x.to_ns().unwrap();
+}
+
+#[test]
+#[should_panic]
+fn test_nanoseconds_negative() {
+    let x: i32 = -42;
+    x.to_ns().unwrap();
+}
+
+#[test]
+fn test_seconds() -> Result<(), tarde::Error> {
+    let x = 1; 
+    let now = time::Instant::now();
+    thread::sleep(x.to_sec()?);
+    
+    Ok(assert!(now.elapsed() >= x.to_sec()?))
+}
+
+#[test]
+#[should_panic]
+fn test_seconds_overflow() {
+    let x: u128 = 18446744073709551614599999;
+    x.to_sec().unwrap();
+}
+
+#[test]
+#[should_panic]
+fn test_seconds_negative() {
+    let x: i32 = -42;
+    x.to_sec().unwrap();
 }

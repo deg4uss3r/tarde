@@ -1,6 +1,6 @@
 # TARDE
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/deg4uss3r/tardeblob/master/LICENSE.md) 
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/deg4uss3r/tarde/blob/master/LICENSE.md) 
 [![Crates.io](https://img.shields.io/crates/v/tarde.svg)](https://crates.io/crates/tarde)
 
 Linux: [![Build Status](https://travis-ci.org/deg4uss3r/tarde.svg?branch=master)](https://travis-ci.org/deg4uss3r/tarde)

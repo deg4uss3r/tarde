@@ -2,6 +2,11 @@
 name = "tarde"
 version = "0.1.0"
 authors = ["Ricky (Degausser) <Ricky@Hosfelt.io>"]
+description = "TARDE - Time And Rust Duration Ergonomics, a quick way to initalize std::time::Duration values"
+homepage = "https://github.com/deg4uss3r/tarde"
+repository = "https://github.com/deg4uss3r/tarde"
+readme = "README.md"
+license-file = "LICENSE.md"
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

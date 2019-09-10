@@ -1,0 +1,17 @@
+sudo: false
+language: rust
+cache: cargo
+rust:
+  - nightly
+  - beta
+  - stable
+  - 1.37.0
+matrix:
+    allow_failures:
+        - rust: nightly
+script:
+  - |
+    travis-cargo --only stable test -- --verbose &&
+    travis-cargo --skip nightly test -- --verbose &&
+    travis-cargo --only nightly test -- --verbose  &&
+    travis-cargo --only nightly bench -- --no-run 

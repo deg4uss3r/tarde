@@ -1,6 +1,8 @@
 # TARDE
 
 [![Crates.io](https://img.shields.io/crates/v/tarde.svg)](https://crates.io/crates/tarde)
+[![Linux Build](https://travis-ci.org/deg4uss3r/tarde.svg?branch=master)
+[![Windows Build](https://ci.appveyor.com/api/projects/status/ejg8c33dn31nhv36/branch/master?svg=true)](https://ci.appveyor.com/project/deg4uss3r/tarde/branch/master)
 
 TARDE (tar-dee, Time And Rust Duration Ergonomics) is a small library to allow for better ergonmics when using `std::time::Duration`.
 

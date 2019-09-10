@@ -10,7 +10,7 @@ TARDE (tar-dee, Time And Rust Duration Ergonomics) is a small library to allow f
 use std::time::Duration;
 use tarde::*;
 
-fn main() -> Result<(), tardiw::Error> {
+fn main() -> Result<(), tarde::Error> {
     let x = 10;
     let now = time::Instant::now();
     thread::sleep(x.to_ms()?); 

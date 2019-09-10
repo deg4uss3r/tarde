@@ -1,5 +1,7 @@
 # TARDE
 
+[![Crates.io](https://img.shields.io/crates/v/tarde.svg)](https://crates.io/crates/tarde)
+
 TARDE (tar-dee, Time And Rust Duration Ergonomics) is a small library to allow for better ergonmics when using `std::time::Duration`.
 
 ## Example

@@ -18,9 +18,9 @@ use tarde::*;
 fn main() -> Result<(), tarde::Error> {
     let x = 10;
     let now = time::Instant::now();
-    thread::sleep(x.to_ms()?); 
+    thread::sleep(x.millis()?); 
 
-    Ok(assert!(now.elapsed() >= x.to_ms()?))
+    Ok(assert!(now.elapsed() >= x.millis()?))
 }
 ```
 

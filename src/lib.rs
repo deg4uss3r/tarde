@@ -36,7 +36,7 @@ use snafu::Snafu;
 pub enum Error {
     /// `Error::Convert` type will output `("Could not convert negative number to time duration: {}", number)`
     /// This error happens when a negative signed number (e.g. `-8_i16`) is passed as input to a
-    /// to a `Duration` trait implementation.
+    /// to a `During` trait implementation.
     #[snafu(display("Could not convert negative number to time duration: {}", number))]
     Convert{
         number: i128
@@ -44,16 +44,16 @@ pub enum Error {
     
     /// `Error::OverFlow` type will output `("Could not convert 128-bit to 64-bit number (overflow error): {}", number))` 
     /// This error happens when too large of a `u128` number was passed as input to
-    /// `std::time::Duration` as it only accepts `u64` as input to the `Duration` initializers 
+    /// `std::time::Duration` as it only accepts `u64` as input to the `During` initializers 
     #[snafu(display("Could not convert 128-bit to 64-bit number (overflow error): {}", number))]
     OverFlow{
         number: u128
     }
 }
 
-/// `Duration` is the trait we are implementing over Rust [primitives](https://doc.rust-lang.org/rust-by-example/primitives.html)
-/// Duration implements converting primitives to `micros`, `millis`, `nanos`, and `secs` for during
-/// timing
+/// `During` is the trait we are implementing over Rust [primitives](https://doc.rust-lang.org/rust-by-example/primitives.html)
+/// `During` implements converting primitives to `micros`, `millis`, `nanos`, and `secs` for
+/// `Duration` initialization.
 pub trait During {
     fn micros(self) -> Result<time::Duration, Error>;
     fn millis(self) -> Result<time::Duration, Error>;

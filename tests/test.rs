@@ -92,3 +92,10 @@ fn test_seconds_negative() {
     let x: i32 = -42;
     x.sec().unwrap();
 }
+
+#[test]
+fn ambiguous_type() -> Result<(), tarde::Error> {
+    120.sec()?;
+
+    Ok(())
+}

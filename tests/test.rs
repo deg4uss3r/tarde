@@ -1,4 +1,4 @@
-use tarde::Duration;
+use tarde::During;
 use std::{thread, time};
 
 #[test]

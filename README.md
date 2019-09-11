@@ -7,20 +7,19 @@ Linux: [![Build Status](https://travis-ci.org/deg4uss3r/tarde.svg?branch=master)
 
 Windows: [![Build Status](https://ci.appveyor.com/api/projects/status/ejg8c33dn31nhv36/branch/master?svg=true)](https://ci.appveyor.com/project/deg4uss3r/tarde/branch/master)
 
-TARDE (tar-dee, Time And Rust Duration Ergonomics) is a small library to allow for better ergonmics when using `std::time::Duration`.
+TARDE (tar-dee, Time And Rust Duration Ergonomics) is a small library to allow for better ergonomics when using `std::time::Duration`.
 
 ## Example
 
 ```rust
-use std::time::Duration;
-use tarde::*;
+use std::time::Instant;
+use tarde::{During, Error};
 
 fn main() -> Result<(), tarde::Error> {
-    let x = 10;
     let now = time::Instant::now();
-    thread::sleep(x.millis()?); 
+    thread::sleep(10.millis()?); 
 
-    Ok(assert!(now.elapsed() >= x.millis()?))
+    Ok(assert!(now.elapsed() >= 10.millis()?))
 }
 ```
 

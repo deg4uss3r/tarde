@@ -5,10 +5,11 @@ on: [push]
 jobs:
   build:
 
-    runs-on: |
-      [ubtntu-latest],
-      [macOS-latest],
-      [windows-latest]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        rust_version: ['stable', 'beta', 'nightly']
+        os: [ubtntu-latest, macOS-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v1

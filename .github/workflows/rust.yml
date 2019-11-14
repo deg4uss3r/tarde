@@ -10,9 +10,13 @@ jobs:
       matrix:
         rust_version: ['stable', 'beta', 'nightly']
         os: [ubtntu-latest, macOS-latest, windows-latest]
-
     steps:
     - uses: actions/checkout@v1
+    - name: Install Rust
+      if: startsWith(matrix.os, 'macOS')
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ rust_version }}
     - name: Build
       run: cargo build --verbose
     - name: Run tests
